@@ -1,0 +1,40 @@
+{
+  "name": "tree-sitter-sugarcube",
+  "version": "0.1.0",
+  "type":"module",
+  "description": "Tree-sitter grammar for SugarCube v2 / Twee3",
+  "main": "bindings/node",
+  "keywords": [
+    "parser",
+    "tree-sitter",
+    "sugarcube",
+    "twine",
+    "twee"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.6.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.24.0"
+  },
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp build",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.sugarcube",
+      "file-types": [
+        "twee",
+        "tw"
+      ],
+      "highlights": "queries/highlights.scm",
+      "locals": "queries/locals.scm",
+      "injections": "queries/injections.scm"
+    }
+  ]
+}

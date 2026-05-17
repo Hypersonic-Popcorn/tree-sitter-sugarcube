@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "tree_sitter_sugarcube",
+      "camelcase": "TreeSitterSugarcube",
+      "title": "TreeSitterSugarcube",
+      "scope": "source.tree_sitter_sugarcube",
+      "file-types": [
+        "tw",
+        "twee"
+      ],
+      "injection-regex": "^tree_sitter_sugarcube$",
+      "class-name": "TreeSitterTreeSitterSugarcube"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "A tree-sitter grammar for SugarCube V2",
+    "authors": [
+      {
+        "name": "HyperSonic Popcorn",
+        "url": ""
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/Hypersonic-Popcorn/tree-sitter-sugarcube",
+      "funding": ""
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "java": false,
+    "node": false,
+    "python": false,
+    "rust": false,
+    "swift": false,
+    "zig": false
+  }
+}

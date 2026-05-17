@@ -1,0 +1,277 @@
+================================================================================
+Passage header — simple
+================================================================================
+
+:: Start
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))))
+
+================================================================================
+Passage header — with tags
+================================================================================
+
+:: MyPassage [tag1 tag2]
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name)
+      (tag_list
+        (tag)
+        (tag)))))
+
+================================================================================
+Passage header — with metadata
+================================================================================
+
+:: Forest {"position":"400,300"}
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name)
+      (metadata))))
+
+================================================================================
+Simple macro — no args
+================================================================================
+
+:: Start
+<<nobr>>
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (macro
+        (macro_name)))))
+
+================================================================================
+Macro with args
+================================================================================
+
+:: Start
+<<set $gold to 100>>
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (macro
+        (macro_name)
+        (macro_args
+          (variable)
+          (number_literal))))))
+
+================================================================================
+Closing macro
+================================================================================
+
+:: Start
+<<if $cond>>
+<</if>>
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (macro
+        (macro_name)
+        (macro_args
+          (variable)))
+      (end_macro
+        (macro_name)))))
+
+================================================================================
+Story variable
+================================================================================
+
+:: Start
+$playerName
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (variable))))
+
+================================================================================
+Temporary variable
+================================================================================
+
+:: Start
+_counter
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (temp_variable))))
+
+================================================================================
+Wiki link — simple
+================================================================================
+
+:: Start
+[[Go to the forest]]
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (wiki_link
+        (link_text)))))
+
+================================================================================
+Wiki link — with label
+================================================================================
+
+:: Start
+[[Enter the forest|Forest]]
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (wiki_link
+        (link_text)
+        (link_text)))))
+
+================================================================================
+Script block
+================================================================================
+
+:: Start
+<<script>>
+console.log("hello");
+<</script>>
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (script_block
+        (raw_content)))))
+
+================================================================================
+SugarCube block comment
+================================================================================
+
+:: Start
+/* This is a comment */
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (sc_comment))))
+
+================================================================================
+Naked expression
+================================================================================
+
+:: Start
+<<= $score + 10>>
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (naked_expression
+        (expression)))))
+
+================================================================================
+Passage with tags
+================================================================================
+
+:: SpecialPassage [script]
+Inside the body.
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name)
+      (tag_list
+        (tag)))
+    (passage_body
+      (text))))
+
+================================================================================
+Arrow function in script block
+================================================================================
+
+:: ArrowFunctionPassage
+<<script>>
+const double = (x) => x * 2;
+console.log(double(4));
+<</script>>
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (script_block
+        (raw_content)))))
+
+================================================================================
+Bare underscore in macro args
+================================================================================
+
+:: TempVarPassage
+<<set _ = "I am temporary">>
+
+----
+
+(source_file
+  (passage
+    (passage_header
+      (passage_name))
+    (passage_body
+      (macro
+        (macro_name)
+        (macro_args
+          (string_literal))))))
