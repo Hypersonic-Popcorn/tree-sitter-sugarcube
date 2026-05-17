@@ -1,0 +1,25 @@
+name = "SugarCube"
+grammar = "sugarcube"
+
+# File extensions recognised as SugarCube/Twee3
+path_suffixes = ["twee", "tw"]
+
+# Line comments (SugarCube uses /* */ only, but Twee2 tools often use //)
+line_comments = ["// "]
+block_comment = { start = "/*", end = "*/" }
+
+autoclose_before = ";:.,=}])"
+
+# Bracket pairs for auto-close and rainbow-bracket colouring
+brackets = [
+  { start = "<<", end = ">>", close = true, newline = false },
+  { start = "[[", end = "]]", close = true, newline = false },
+  { start = "[img[", end = "]]", close = true, newline = false },
+  { start = "@@", end = "@@", close = true, newline = false },
+  { start = "{", end = "}", close = true, newline = true },
+  { start = "[", end = "]", close = true, newline = false },
+  { start = "(", end = ")", close = true, newline = false },
+  { start = "\"", end = "\"", close = true, newline = false, not_in = ["comment", "string"] },
+  { start = "'", end = "'", close = true, newline = false, not_in = ["comment", "string"] },
+  { start = "`", end = "`", close = true, newline = false, not_in = ["comment", "string"] },
+]
