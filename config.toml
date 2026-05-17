@@ -6,7 +6,7 @@ path_suffixes = ["twee", "tw"]
 
 # Line comments (SugarCube uses /* */ only, but Twee2 tools often use //)
 line_comments = ["// "]
-block_comment = { start = "/*", end = "*/" }
+block_comment = ["/*", "*/"]
 
 autoclose_before = ";:.,=}])"
 
